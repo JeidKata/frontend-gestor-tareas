@@ -1,0 +1,91 @@
+.calendario {
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.calendario table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fafafa;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 1px 4px rgba(25,118,210,0.08);
+}
+
+.calendario th, .calendario td {
+    width: 14.28%;
+    text-align: center;
+    padding: 0.7em 0.2em;
+    border: 1px solid #e0e0e0;
+    font-size: 1rem;
+}
+
+.calendario th {
+    background: #1976d2;
+    color: #fff;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.calendario td {
+    background: #fff;
+    color: #333;
+    transition: background 0.2s;
+}
+
+.calendario td.primer-dia {
+    background: #e3f2fd;
+    font-weight: bold;
+    color: #1976d2;
+}
+
+.calendario td:hover:not(:empty) {
+    background: #bbdefb;
+    cursor: pointer;
+}
+
+.calendario td:empty {
+    background: #f4f6f8;
+    cursor: default;
+}
+
+@media (max-width: 600px) {
+    .calendario th, .calendario td {
+        font-size: 0.85rem;
+        padding: 0.4em 0.1em;
+    }
+}
+
+
+/* <section class="calendario" aria-label="Calendario mensual">
+    <table>
+        <thead>
+            <tr>
+                <th scope="col">D</th>
+                <th scope="col">L</th>
+                <th scope="col">M</th>
+                <th scope="col">M</th>
+                <th scope="col">J</th>
+                <th scope="col">V</th>
+                <th scope="col">S</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td></td><td class="primer-dia">1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td>
+            </tr>
+            <tr>
+                <td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td>
+            </tr>
+            <tr>
+                <td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td><td>20</td>
+            </tr>
+            <tr>
+                <td>21</td><td>22</td><td>23</td><td>24</td><td>25</td><td>26</td><td>27</td>
+            </tr>
+            <tr>
+                <td>28</td><td>29</td><td>30</td><td>31</td><td></td><td></td><td></td>
+            </tr>
+        </tbody>
+    </table>
+</section> */

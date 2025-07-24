@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Dashboard Proyecto</title>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Puedes agregar iconos de FontAwesome o similar -->
+    <style>
+        body { margin: 0; font-family: Arial, sans-serif; background: #f5f6fa; }
+        header { display: flex; align-items: center; justify-content: space-between; padding: 0 2rem; background: #fff; box-shadow: 0 2px 4px rgba(0,0,0,0.04);}
+        .menu-btn { background: none; border: none; font-size: 2rem; cursor: pointer; }
+        .logo { flex: 1; text-align: center; font-weight: bold; font-size: 1.5rem; }
+        .header-right { display: flex; align-items: center; gap: 1rem; }
+        .search-box { position: relative; }
+        .search-box input { padding: 0.5rem 2rem 0.5rem 0.5rem; border-radius: 2rem; border: 1px solid #ccc; }
+        .search-icon { position: absolute; right: 0.5rem; top: 50%; transform: translateY(-50%); color: #888; }
+        .user-circle { width: 40px; height: 40px; border-radius: 50%; background: #007bff; color: #fff; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1.1rem; }
+        main { display: flex; min-height: 90vh; }
+        nav { width: 220px; background: #222e3c; color: #fff; padding: 2rem 1rem; }
+        nav h2 { font-size: 1.1rem; margin-bottom: 1rem; }
+        nav ul { list-style: none; padding: 0; margin: 0; }
+        nav li { padding: 0.7rem 0.5rem; border-radius: 6px; cursor: pointer; margin-bottom: 0.5rem; }
+        nav li.active, nav li:hover { background: #31415a; }
+        section.project { flex: 1; padding: 2rem; }
+        .project-title { font-size: 1.5rem; font-weight: bold; margin-bottom: 2rem; }
+        .lists { display: flex; gap: 2rem; }
+        .list { background: #fff; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); width: 300px; min-height: 350px; display: flex; flex-direction: column; }
+        .list-header { display: flex; align-items: center; justify-content: space-between; padding: 1rem; border-bottom: 1px solid #eee; }
+        .list-title { font-weight: bold; }
+        .list-menu { background: none; border: none; font-size: 1.3rem; cursor: pointer; }
+        .cards { flex: 1; padding: 1rem; }
+        .card { background: #f1f3f6; border-radius: 6px; padding: 1rem; margin-bottom: 1rem; box-shadow: 0 1px 3px rgba(0,0,0,0.04);}
+        .add-card { display: flex; align-items: center; gap: 0.5rem; color: #007bff; cursor: pointer; padding: 1rem; border-top: 1px solid #eee; }
+        aside { display: none; }
+        footer { background: #222e3c; color: #fff; text-align: center; padding: 1rem; }
+        @media (max-width: 900px) {
+            nav { width: 60px; padding: 1rem 0.5rem; }
+            .lists { flex-direction: column; gap: 1rem; }
+            .list { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <button class="menu-btn" aria-label="Abrir menú">&#9776;</button>
+        <div class="logo">MiEmpresa</div>
+        <div class="header-right">
+            <div class="search-box">
+                <input type="text" placeholder="Buscar...">
+                <span class="search-icon"><ion-icon name="search-outline"></ion-icon></span>
+            </div>
+            <div class="user-circle" title="Usuario">AB</div>
+        </div>
+    </header>
+    <main>
+        <nav>
+            <h2>Proyectos</h2>
+            <ul>
+                <li class="active">Proyecto Alpha</li>
+                <li>Proyecto Beta</li>
+                <li>Proyecto Gamma</li>
+                <li>Proyecto Delta</li>
+            </ul>
+        </nav>
+        <section class="project">
+            <div class="project-title">Proyecto Alpha</div>
+            <div class="lists">
+                <article class="list">
+                    <div class="list-header">
+                        <span class="list-title">Por hacer</span>
+                        <button class="list-menu" aria-label="Opciones">&#8942;</button>
+                    </div>
+                    <div class="cards">
+                        <div class="card">
+                            <strong>Tarea 1</strong>
+                            <p>Descripción de la tarea pendiente.</p>
+                            <time datetime="2024-06-10">10 Jun 2024</time>
+                        </div>
+                    </div>
+                    <div class="add-card"><span>+</span> <span>Agregar tarjeta</span></div>
+                </article>
+                <article class="list">
+                    <div class="list-header">
+                        <span class="list-title">En progreso</span>
+                        <button class="list-menu" aria-label="Opciones">&#8942;</button>
+                    </div>
+                    <div class="cards">
+                        <div class="card">
+                            <strong>Tarea 2</strong>
+                            <p>Descripción de la tarea en progreso.</p>
+                            <time datetime="2024-06-11">11 Jun 2024</time>
+                        </div>
+                    </div>
+                    <div class="add-card"><span>+</span> <span>Agregar tarjeta</span></div>
+                </article>
+                <article class="list">
+                    <div class="list-header">
+                        <span class="list-title">Finalizado</span>
+                        <button class="list-menu" aria-label="Opciones">&#8942;</button>
+                    </div>
+                    <div class="cards">
+                        <div class="card">
+                            <strong>Tarea 3</strong>
+                            <p>Descripción de la tarea finalizada.</p>
+                            <time datetime="2024-06-12">12 Jun 2024</time>
+                        </div>
+                    </div>
+                    <div class="add-card"><span>+</span> <span>Agregar tarjeta</span></div>
+                </article>
+            </div>
+        </section>
+        <aside>
+            <!-- Contenido secundario si lo necesitas -->
+        </aside>
+    </main>
+    <footer>
+        &copy; 2024 MiEmpresa. Todos los derechos reservados.
+    </footer>
+</body>
+</html>
+
+64D7KKBqKYVMLh*fm21
